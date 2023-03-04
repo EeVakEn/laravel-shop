@@ -115,6 +115,7 @@
 
     <script type="text/javascript" src="{{ bagisto_asset('js/shop.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>
+    <script src="{{asset('themes/bliss/assets/js/app.js')}}"></script>
 
     @stack('scripts')
 
@@ -125,7 +126,6 @@
     <script>
         {!! core()->getConfigData('general.content.custom_scripts.custom_javascript') !!}
     </script>
-
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 return [
     'invalid_vat_format' => 'Данный идентификатор НДС имеет неправильный формат',
     'security-warning'   => 'Обнаружена подозрительная активность!!!',
-    'nothing-to-delete'  => 'Нечего удалять',
+    'nothing-to-delete'  => 'Нечего удалить',
 
     'layouts' => [
         'my-account'            => 'Мой счет',
@@ -30,22 +30,23 @@ return [
     ],
 
     'header' => [
-        'title'         => 'Счет',
-        'dropdown-text' => 'Управление корзиной, заказами и списком желаний',
-        'sign-in'       => 'Войти',
-        'sign-up'       => 'Зарегистрироваться',
-        'account'       => 'Счет',
+        'title'         => 'Аккаунт',
+        'dropdown-text' => 'Управление корзиной, заказами и избранным',
+        'sign-in'       => 'Вход',
+        'sign-up'       => 'Регистрация',
+        'account'       => 'Аккаунт',
         'cart'          => 'Корзина',
         'profile'       => 'Профиль',
-        'wishlist'      => 'Избранное',
+        'wishlist'      => 'избранное',
         'cart'          => 'Корзина',
         'logout'        => 'Выйти',
         'search-text'   => 'Поиск',
     ],
 
     'minicart' => [
+        'quantity' => 'кол-во',
         'view-cart' => 'В корзину',
-        'checkout'  => 'Проверить',
+        'checkout'  => 'Оформление заказа',
         'cart'      => 'Корзина',
         'zero'      => '0',
     ],
@@ -115,13 +116,13 @@ return [
 
         'signup-form' => [
             'page-title'                  => '«Создать новую учетную запись клиента»',
-            'title'                       => 'Зарегистрироваться',
+            'title'                       => 'Регистрaция',
             'firstname'                   => 'Имя',
             'lastname'                    => 'Фамилия',
-            'email'                       => 'Эл. адрес',
+            'email'                       => 'Email',
             'password'                    => 'Пароль',
             'confirm_pass'                => 'Подтвердить Пароль',
-            'button_title'                => 'Регистр',
+            'button_title'                => 'Регистрaция',
             'agree'                       => 'Согласен',
             'terms'                       => 'Условия',
             'conditions'                  => 'Условия',
@@ -149,7 +150,7 @@ return [
         'login-form' => [
             'page-title'          => 'Вход для клиентов',
             'title'               => 'Войти',
-            'email'               => 'Эл. адрес',
+            'email'               => 'Email',
             'password'            => 'Пароль',
             'forgot_pass'         => 'Забыл пароль?',
             'button_title'        => 'Войти',
@@ -165,9 +166,9 @@ return [
 
         'forgot-password' => [
             'title'      => 'Восстановить пароль',
-            'email'      => 'Эл. адрес',
-            'submit'     => '«Отправить письмо для сброса пароля»',
-            'page_title' => 'Забыли Ваш пароль ?',
+            'email'      => 'Email',
+            'submit'     => 'Отправить письмо для сброса пароля',
+            'page_title' => 'Забыли пароль ?',
         ],
 
         'reset-password' => [
@@ -207,7 +208,7 @@ return [
                 'female'    => 'Женский',
                 'dob'       => 'Дата рождения',
                 'phone'     => 'Телефон',
-                'email'     => 'Эл. адрес',
+                'email'     => 'Email',
                 'opassword' => 'Старый пароль',
                 'password'  => 'Пароль',
                 'cpassword' => 'Подтвердить Пароль',
@@ -502,8 +503,8 @@ return [
             'continue-shopping'         => 'Продолжить покупки',
             'continue-registration'     => '«Продолжить регистрацию»',
             'proceed-to-checkout'       => 'Перейти к оформлению заказа',
-            'remove'                    => 'Удалять',
-            'remove-link'               => 'Удалять',
+            'remove'                    => 'Удалить',
+            'remove-link'               => 'Удалить',
             'move-to-wishlist'          => 'Добавить в список желаемого',
             'move-to-wishlist-success'  => 'Товар успешно перемещен в список желаний.',
             'move-to-wishlist-error'    => 'Не удается переместить элемент в список желаний, повторите попытку позже.',
@@ -525,7 +526,7 @@ return [
             ],
             'quantity-error'            => 'Запрошенное количество недоступно.',
             'cart-subtotal'             => 'Сумма',
-            'cart-remove-action'        => '«Вы действительно хотите это сделать?»',
+            'cart-remove-action'        => 'Вы действительно хотите это сделать?',
             'partial-cart-update'       => '«Обновлены только некоторые продукты»',
             'link-missing'              => '',
             'event'                     => [
@@ -540,7 +541,7 @@ return [
         ],
 
         'onepage' => [
-            'title'               => 'Проверить',
+            'title'               => 'Оформление заказв',
             'information'         => 'Информация',
             'shipping'            => 'Перевозки',
             'payment'             => 'Оплата',
@@ -551,7 +552,7 @@ return [
             'company-name'        => 'Название организации',
             'first-name'          => 'Имя',
             'last-name'           => 'Фамилия',
-            'email'               => 'Эл. адрес',
+            'email'               => 'Email',
             'address1'            => 'Адрес улицы',
             'city'                => 'Город',
             'state'               => 'Состояние',

@@ -198,6 +198,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/bagisto/bagisto-package-generator" />
+      <path value="$PROJECT_DIR$/vendor/bagisto/laravel-datafaker" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

@@ -37,15 +37,16 @@ class CartRepository extends Repository
     public function update(array $data, $id, $attribute = "id")
     {
         $cart = $this->find($id);
-
-        $cart->update($data);
+        if(isset($data) && !empty($data)){
+            $cart->update($data);
+        }
 
         return $cart;
     }
 
     /**
      * Method to detach associations. Use this only with guest cart only.
-     * 
+     *
      * @param  int  $cartId
      * @return bool
      */

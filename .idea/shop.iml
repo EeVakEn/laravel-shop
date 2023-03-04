@@ -44,6 +44,7 @@
       <excludeFolder url="file://$MODULE_DIR$/storage/debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bagisto/bagisto-package-generator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bagisto/laravel-datafaker" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

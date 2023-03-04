@@ -7,19 +7,14 @@
         <a class="cart-link" href="{{ route('shop.checkout.cart.index') }}">
             <span class="icon cart-icon"></span>
         </a>
-
-        <span class="name">
-            {{ __('shop::app.header.cart') }}
-            <span class="count"> ({{ $cart->items->count() }})</span>
-        </span>
-
-        <i class="icon arrow-down-icon"></i>
+            <span class="count"> {{ $cart->items->count() }}</span>
     </div>
 
     <div class="dropdown-list" style="display: none; top: 52px; right: 0px;">
         <div class="dropdown-container">
             <div class="dropdown-cart">
                 <div class="dropdown-header">
+                    <h4>{{ __('shop::app.header.cart') }}</h4>
                     <p class="heading">
                         {{ __('shop::app.checkout.cart.cart-subtotal') }} -
 
@@ -84,13 +79,13 @@
 
                                 {!! view_render_event('bagisto.shop.checkout.cart-mini.item.quantity.before', ['item' => $item]) !!}
 
-                                <div class="item-qty">Quantity : {{ $item->quantity }}</div>
+                                <div class="item-qty">{{__('shop::app.minicart.quantity')}} : {{ $item->quantity }}</div>
 
                                 {!! view_render_event('bagisto.shop.checkout.cart-mini.item.quantity.after', ['item' => $item]) !!}
 
-                                <div class="item-remove">
-                                    <a href="{{ route('shop.checkout.cart.remove', $item->id) }}" onclick="removeLink('{{ __('shop::app.checkout.cart.cart-remove-action') }}')">{{ __('shop::app.checkout.cart.remove-link') }}</a>
-                                </div>
+                            </div>
+                            <div class="item-remove">
+                                <a href="{{ route('shop.checkout.cart.remove', $item->id) }}" onclick="removeLink('{{ __('shop::app.checkout.cart.cart-remove-action') }}')"><i class="icon trash-icon"></i> </a>
                             </div>
                         </div>
 

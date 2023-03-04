@@ -1,10 +1,10 @@
 <?php
-    $term = request()->input('term');
-    $image_search = request()->input('image-search');
+$term = request()->input('term');
+$image_search = request()->input('image-search');
 
-    if (! is_null($term)) {
-        $serachQuery = 'term='.request()->input('term');
-    }
+if (!is_null($term)) {
+    $serachQuery = 'term=' . request()->input('term');
+}
 ?>
 
 <div class="header" id="header">
@@ -14,9 +14,9 @@
                 <li>
                     <a href="{{ route('shop.home.index') }}" aria-label="Logo">
                         @if ($logo = core()->getCurrentChannel()->logo_url)
-                            <img class="logo" src="{{ $logo }}" alt="" />
+                            <img class="logo" src="{{ $logo }}" alt=""/>
                         @else
-                            <img class="logo" src="{{ bagisto_asset('images/logo.svg') }}" alt="" />
+                            <img class="logo" src="{{ bagisto_asset('images/logo.svg') }}" alt=""/>
                         @endif
                     </a>
                 </li>
@@ -24,7 +24,8 @@
 
             <ul class="search-container">
                 <li class="search-group">
-                    <form role="search" action="{{ route('shop.search.index') }}" method="GET" style="display: inherit;">
+                    <form role="search" action="{{ route('shop.search.index') }}" method="GET"
+                          style="display: inherit;">
                         <label for="search-bar" style="position: absolute; z-index: -1;">Search</label>
                         <input
                             required
@@ -61,7 +62,7 @@
                     $showCompare = core()->getConfigData('general.content.shop.compare_option') == "1" ? true : false
                 @endphp
 
-               @php
+                @php
                     $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
                 @endphp
 
@@ -99,9 +100,12 @@
                 <li>
                     <span class="dropdown-toggle">
                         <i class="icon account-icon"></i>
-
-                        <span class="name">{{ __('shop::app.header.account') }}</span>
-
+                        @auth('customer')
+                            {{ auth()->guard('customer')->user()->first_name }}
+                        @endauth
+                        @guest('customer')
+                            <span class="name">{{ __('shop::app.header.account') }}</span>
+                        @endguest
                         <i class="icon arrow-down-icon"></i>
                     </span>
 
@@ -109,7 +113,8 @@
                         <ul class="dropdown-list account guest">
                             <li>
                                 <div>
-                                    <label style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
+                                    <label
+                                        style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
                                         {{ __('shop::app.header.title') }}
                                     </label>
                                 </div>
@@ -119,11 +124,13 @@
                                 </div>
 
                                 <div class="button-group">
-                                    <a class="btn btn-primary btn-md" href="{{ route('customer.session.index') }}" style="color: #ffffff">
+                                    <a class="btn btn-primary btn-md" href="{{ route('customer.session.index') }}"
+                                       style="color: #ffffff">
                                         {{ __('shop::app.header.sign-in') }}
                                     </a>
 
-                                    <a class="btn btn-primary btn-md" href="{{ route('customer.register.index') }}" style="float: right; color: #ffffff">
+                                    <a class="btn btn-primary btn-md" href="{{ route('customer.register.index') }}"
+                                       style="float: right; color: #ffffff">
                                         {{ __('shop::app.header.sign-up') }}
                                     </a>
                                 </div>
@@ -133,13 +140,14 @@
 
                     @auth('customer')
                         @php
-                           $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
+                            $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
                         @endphp
 
                         <ul class="dropdown-list account customer">
                             <li>
                                 <div>
-                                    <label style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
+                                    <label
+                                        style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
                                         {{ auth()->guard('customer')->user()->first_name }}
                                     </label>
                                 </div>
@@ -155,24 +163,25 @@
                                         </li>
                                     @endif
 
-                                    @if ($showCompare)                                     
-                                    <li>
-                                        <a
-                                            @auth('customer')
-                                                href="{{ route('velocity.customer.product.compare') }}"
-                                            @endauth
+                                    @if ($showCompare)
+                                        <li>
+                                            <a
+                                                @auth('customer')
+                                                    href="{{ route('velocity.customer.product.compare') }}"
+                                                @endauth
 
-                                            @guest('customer')
-                                                href="{{ route('velocity.product.compare') }}"
-                                            @endguest
-                                            
+                                                @guest('customer')
+                                                    href="{{ route('velocity.product.compare') }}"
+                                                @endguest
+
                                             > {{ __('shop::app.customer.compare.text') }}
-                                        </a>
-                                    </li>
+                                            </a>
+                                        </li>
                                     @endif
 
                                     <li>
-                                        <form id="customerLogout" action="{{ route('customer.session.destroy') }}" method="POST">
+                                        <form id="customerLogout" action="{{ route('customer.session.destroy') }}"
+                                              method="POST">
                                             @csrf
 
                                             @method('DELETE')
@@ -205,7 +214,7 @@
 
             </ul>
 
-            <span class="menu-box" ><span class="icon icon-menu" id="hammenu"></span>
+            <span class="menu-box"><span class="icon icon-menu" id="hammenu"></span>
         </div>
     </div>
 
@@ -238,9 +247,11 @@
             <label class="image-search-container" :for="'image-search-container-' + _uid">
                 <i class="icon camera-icon"></i>
 
-                <input type="file" :id="'image-search-container-' + _uid" ref="image_search_input" v-on:change="uploadImage()"/>
+                <input type="file" :id="'image-search-container-' + _uid" ref="image_search_input"
+                       v-on:change="uploadImage()"/>
 
-                <img :id="'uploaded-image-url-' +  + _uid" :src="uploaded_image_url" alt="" width="20" height="20" style="display:none" />
+                <img :id="'uploaded-image-url-' +  + _uid" :src="uploaded_image_url" alt="" width="20" height="20"
+                     style="display:none"/>
             </label>
         </div>
     </script>
@@ -251,7 +262,7 @@
 
             template: '#image-search-component-template',
 
-            data: function() {
+            data: function () {
                 return {
                     uploaded_image_url: '',
                     image_search_status: "{{core()->getConfigData('general.content.shop.image_search') == '1' ? 'true' : 'false'}}" == 'true'
@@ -259,7 +270,7 @@
             },
 
             methods: {
-                uploadImage: function() {
+                uploadImage: function () {
                     var imageInput = this.$refs.image_search_input;
 
                     if (imageInput.files && imageInput.files[0]) {
@@ -274,7 +285,7 @@
                                 formData.append('image', imageInput.files[0]);
 
                                 axios.post("{{ route('shop.image.search.upload') }}", formData, {headers: {'Content-Type': 'multipart/form-data'}})
-                                    .then(function(response) {
+                                    .then(function (response) {
                                         self.uploaded_image_url = response.data;
 
                                         var net;
@@ -286,12 +297,12 @@
 
                                             net = await mobilenet.load();
 
-                                            const imgElement = document.getElementById('uploaded-image-url-' +  + self._uid);
+                                            const imgElement = document.getElementById('uploaded-image-url-' + +self._uid);
 
                                             try {
                                                 const result = await net.classify(imgElement);
 
-                                                result.forEach(function(value) {
+                                                result.forEach(function (value) {
                                                     queryString = value.className.split(',');
 
                                                     if (queryString.length > 1) {
@@ -311,7 +322,8 @@
                                                 ];
 
                                                 self.$root.addFlashMessages();
-                                            };
+                                            }
+                                            ;
 
                                             localStorage.searched_image_url = self.uploaded_image_url;
 
@@ -324,7 +336,7 @@
 
                                         app();
                                     })
-                                    .catch(function(error) {
+                                    .catch(function (error) {
                                         self.$root.hideLoader();
 
                                         window.flashMessages = [
@@ -340,12 +352,12 @@
 
                                 imageInput.value = '';
 
-                                        window.flashMessages = [
-                                            {
-                                                'type': 'alert-error',
-                                                'message': "{{ __('shop::app.common.image-upload-limit') }}"
-                                            }
-                                        ];
+                                window.flashMessages = [
+                                    {
+                                        'type': 'alert-error',
+                                        'message': "{{ __('shop::app.common.image-upload-limit') }}"
+                                    }
+                                ];
 
                                 self.$root.addFlashMessages();
 
@@ -363,27 +375,27 @@
     </script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-            $('body').delegate('#search, .icon-menu-close, .icon.icon-menu', 'click', function(e) {
+            $('body').delegate('#search, .icon-menu-close, .icon.icon-menu', 'click', function (e) {
                 toggleDropdown(e);
             });
 
             @auth('customer')
-                @php
-                    $compareCount = app('Webkul\Velocity\Repositories\VelocityCustomerCompareProductRepository')
-                        ->count([
-                            'customer_id' => auth()->guard('customer')->user()->id,
-                        ]);
-                @endphp
+            @php
+                $compareCount = app('Webkul\Velocity\Repositories\VelocityCustomerCompareProductRepository')
+                    ->count([
+                        'customer_id' => auth()->guard('customer')->user()->id,
+                    ]);
+            @endphp
 
-                let comparedItems = JSON.parse(localStorage.getItem('compared_product'));
-                $('#compare-items-count').html({{ $compareCount }});
+            let comparedItems = JSON.parse(localStorage.getItem('compared_product'));
+            $('#compare-items-count').html({{ $compareCount }});
             @endauth
 
             @guest('customer')
-                let comparedItems = JSON.parse(localStorage.getItem('compared_product'));
-                $('#compare-items-count').html(comparedItems ? comparedItems.length : 0);
+            let comparedItems = JSON.parse(localStorage.getItem('compared_product'));
+            $('#compare-items-count').html(comparedItems ? comparedItems.length : 0);
             @endguest
 
             function toggleDropdown(e) {
