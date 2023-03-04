@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Admin/src" isTestSource="false" packagePrefix="Webkul\Admin\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Attribute/src" isTestSource="false" packagePrefix="Webkul\Attribute\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/BookingProduct/src" isTestSource="false" packagePrefix="Webkul\BookingProduct\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/CMS/src" isTestSource="false" packagePrefix="Webkul\CMS\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/CartRule/src" isTestSource="false" packagePrefix="Webkul\CartRule\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/CatalogRule/src" isTestSource="false" packagePrefix="Webkul\CatalogRule\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Category/src" isTestSource="false" packagePrefix="Webkul\Category\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Checkout/src" isTestSource="false" packagePrefix="Webkul\Checkout\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Core/src" isTestSource="false" packagePrefix="Webkul\Core\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Customer/src" isTestSource="false" packagePrefix="Webkul\Customer\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/DebugBar/src" isTestSource="false" packagePrefix="Webkul\DebugBar\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Inventory/src" isTestSource="false" packagePrefix="Webkul\Inventory\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Marketing/src" isTestSource="false" packagePrefix="Webkul\Marketing\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Notification/src" isTestSource="false" packagePrefix="Webkul\Notification\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Payment/src" isTestSource="false" packagePrefix="Webkul\Payment\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Paypal/src" isTestSource="false" packagePrefix="Webkul\Paypal\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Product/src" isTestSource="false" packagePrefix="Webkul\Product\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Rule/src" isTestSource="false" packagePrefix="Webkul\Rule\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Sales/src" isTestSource="false" packagePrefix="Webkul\Sales\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Shipping/src" isTestSource="false" packagePrefix="Webkul\Shipping\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Shop/src" isTestSource="false" packagePrefix="Webkul\Shop\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Sitemap/src" isTestSource="false" packagePrefix="Webkul\Sitemap\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/SocialLogin/src" isTestSource="false" packagePrefix="Webkul\SocialLogin\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Tax/src" isTestSource="false" packagePrefix="Webkul\Tax\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Theme/src" isTestSource="false" packagePrefix="Webkul\Theme\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Ui/src" isTestSource="false" packagePrefix="Webkul\Ui\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/User/src" isTestSource="false" packagePrefix="Webkul\User\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/Webkul/Velocity/src" isTestSource="false" packagePrefix="Webkul\Velocity\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/api" isTestSource="true" packagePrefix="Tests\API\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/functional" isTestSource="true" packagePrefix="Tests\Functional\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/trigger" isTestSource="true" packagePrefix="Tests\Trigger\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/unit" isTestSource="true" packagePrefix="Tests\Unit\" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/app" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/fonts" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/debugbar" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bagisto/bagisto-package-generator" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

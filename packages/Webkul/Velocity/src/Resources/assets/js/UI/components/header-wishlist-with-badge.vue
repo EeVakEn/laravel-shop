@@ -1,6 +1,6 @@
 <template>
     <a class="wishlist-btn unset" :href="src">
-        <i class="material-icons">favorite_border</i>
+        <i class="fa fa-cart"></i>
 
         <div class="badge-container" v-if="wishlistCount > 0">
             <span class="badge" v-text="wishlistCount"></span>

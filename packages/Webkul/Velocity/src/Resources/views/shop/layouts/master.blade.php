@@ -76,7 +76,6 @@
                                     category-count="{{ $velocityMetaData ? $velocityMetaData->sidebar_category_count : 10 }}"
                                     add-class="category-list-container pt10">
                                 </sidebar-component>
-
                                 <div class="col-12 no-padding content" id="home-right-bar-container">
                                     <div class="container-right row no-margin col-12 no-padding">
                                         {!! view_render_event('bagisto.shop.layout.content.before') !!}
