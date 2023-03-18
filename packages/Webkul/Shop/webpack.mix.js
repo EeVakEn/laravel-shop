@@ -17,6 +17,7 @@ mix.disableNotifications();
 
 mix.js([__dirname + "/src/Resources/assets/js/app.js"], "js/shop.js")
     .copyDirectory(__dirname + "/src/Resources/assets/images", publicPath + "/images")
+    .copyDirectory(__dirname + "/src/Resources/assets/js", publicPath + "/js")
     .sass(__dirname + "/src/Resources/assets/sass/app.scss", "css/shop.css")
     .options({
         processCssUrls: false

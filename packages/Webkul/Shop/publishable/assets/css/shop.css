@@ -1031,13 +1031,6 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
     margin-left: -2px
 }
 
-.header .header-top div.left-content ul.search-container li.search-group .search-icon-wrapper button {
-    background: #fff;
-    border: 0;
-    padding: 3px 5px;
-    margin: 0
-}
-
 .header .header-top div.left-content ul.search-container li.search-group .image-search-container {
     position: absolute;
     right: 41px;

@@ -4,8 +4,7 @@
 
         <i class="icon wishlist-icon"></i>
         <span class="name">
-            {{ text }}
-            <span class="count">(<span>{{ compareCount ? compareCount : 0 }}</span>)</span>
+            <span class="count"><span>{{ compareCount ? compareCount : 0 }}</span></span>
         </span>
     </a>
 </li>
@@ -26,12 +25,12 @@ export default {
     },
 
     methods: {
-        updateHeaderItemsCount: function () {       
+        updateHeaderItemsCount: function () {
 
             this.$http
                 .get(`${this.$root.baseUrl}/items-count`)
                 .then(response => {
-                    
+
                     this.compareCount = response.data.wishlistedProductsCount;
                 });
         }

@@ -242,7 +242,7 @@ label {
             }
 
             .content {
-                padding: 5px 20px 15px 20px;
+                padding: 5px 16px 15px 16px;
             }
 
             .modal-footer {
@@ -497,8 +497,15 @@ header {
     }
 
     .left-wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
         float: right;
 
+        .material-icons{
+            font-size: 28px;
+            font-weight: 100;
+        }
         .compare-btn,
         .wishlist-btn,
         .mini-cart-btn {

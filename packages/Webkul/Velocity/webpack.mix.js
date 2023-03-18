@@ -1,6 +1,16 @@
 const path = require('path');
 const mix = require('laravel-mix');
-const colors = require('colors');
+// const colors = require('colors');
+// Live reload
+mix.browserSync({
+    // fixes pagination urls otherwise they get re-written to use the service `container_name`...
+    host: 'localhost',
+    // service container_name...
+    proxy: 'shop_php',
+    // matches the port number exposed earlier...
+    port: 9000,
+    open: false,
+});
 
 require('laravel-mix-merge-manifest');
 require('laravel-mix-clean');
@@ -16,9 +26,9 @@ const devPublicPath = path.join(
     'assets'
 );
 const publicPath = mix.inProduction() ? prodPublicPath : devPublicPath;
-
-console.log(colors.bold.blue(`Assets will be published in: ${publicPath}`));
-
+// console.log(publicPath); ../../../public/themes/velocity/assets
+// console.log(colors.bold.blue(`Assets will be published in: ${publicPath}`));
+// console.log(__dirname); /var/www/html/packages/Webkul/Velocity
 const assetsPath = path.join(__dirname, 'src', 'Resources', 'assets');
 const jsPath = path.join(assetsPath, 'js');
 const imagesPath = path.join(assetsPath, 'images');

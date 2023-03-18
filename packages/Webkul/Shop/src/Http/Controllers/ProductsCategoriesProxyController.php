@@ -56,7 +56,6 @@ class ProductsCategoriesProxyController extends Controller
         }
 
         $sliderData = $this->sliderRepository->getActiveSliders();
-
         return view('shop::home.index', compact('sliderData'));
     }
 }

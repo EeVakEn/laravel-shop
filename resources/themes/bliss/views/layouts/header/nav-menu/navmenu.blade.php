@@ -13,7 +13,7 @@ foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCateg
 
 {!! view_render_event('bagisto.shop.layout.header.category.after') !!}
 
-@push('scripts')F
+@push('scripts')
 
 <script type="text/x-template" id="category-nav-template">
 
