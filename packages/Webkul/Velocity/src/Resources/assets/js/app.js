@@ -86,6 +86,7 @@ Vue.component('hot-categories', () => import('@components/hot-categories'));
 Vue.component('popular-category', () => import('@components/popular-category'));
 Vue.component('popular-categories', () => import('@components/popular-categories'));
 Vue.component('velocity-overlay-loader', () => import('@components/overlay-loader'));
+Vue.component('navi', () => import('@components/navi'));
 Vue.component('vnode-injector', {
     functional: true,
     props: ['nodes'],

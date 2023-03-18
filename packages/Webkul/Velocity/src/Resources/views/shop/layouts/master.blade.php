@@ -8,7 +8,7 @@
         {{-- meta data --}}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="content-language" content="{{ app()->getLocale() }}">
+{{--        <meta http-equiv="content-language" content="{{ app()->getLocale() }}">--}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="base-url" content="{{ url()->to('/') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,8 +42,6 @@
             <div class="main-container-wrapper">
 
                 @section('body-header')
-                    {{-- top nav which contains currency, locale and login header --}}
-                    @include('shop::layouts.top-nav.index')
 
                     {!! view_render_event('bagisto.shop.layout.header.before') !!}
 
@@ -63,7 +61,7 @@
                             </div>
 
                             {{-- desktop header --}}
-                            @include('shop::layouts.header.desktop')
+{{--                            @include('shop::layouts.header.desktop')--}}
 
                         </header>
 
@@ -90,7 +88,7 @@
                     </div>
                 @show
 
-                <div class="container">
+                <div class="container-fluid">
                     {!! view_render_event('bagisto.shop.layout.full-content.before') !!}
 
                         @yield('full-content-wrapper')

@@ -10,10 +10,6 @@
     category-count="{{ $velocityMetaData ? $velocityMetaData->sidebar_category_count : 10 }}"
     cart-items-count="{{ $cartItemsCount }}"
     cart-route="{{ route('shop.checkout.cart.index') }}"
-    :locale="{{ json_encode(core()->getCurrentLocale()) }}"
-    :all-locales="{{ json_encode(core()->getCurrentChannel()->locales()->orderBy('name')->get()) }}"
-    :currency="{{ json_encode(core()->getCurrentCurrency()) }}"
-    :all-currencies="{{ json_encode(core()->getCurrentChannel()->currencies) }}"
 >
 
     {{-- this is default content if js is not loaded --}}
@@ -42,12 +38,6 @@
     </div>
 
     <template v-slot:greetings>
-        @guest('customer')
-            <a class="unset" href="{{ route('customer.session.index') }}">
-                {{ __('velocity::app.responsive.header.greeting', ['customer' => 'Guest']) }}
-            </a>
-        @endguest
-
         @auth('customer')
             <a class="unset" href="{{ route('customer.profile.index') }}">
                 {{ __('velocity::app.responsive.header.greeting', ['customer' => auth()->guard('customer')->user()->first_name]) }}
@@ -104,12 +94,6 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="{{ route('customer.downloadable_products.index') }}" class="unset">
-                        <i class="icon downloadables text-down-3"></i>
-                        <span>{{ __('velocity::app.shop.general.downloadables') }}</span>
-                    </a>
-                </li>
             </ul>
         @endauth
     </template>
@@ -157,7 +141,7 @@
         </a>
     </template>
 
-    
+
 
     <template v-slot:search-bar>
         <div class="row">

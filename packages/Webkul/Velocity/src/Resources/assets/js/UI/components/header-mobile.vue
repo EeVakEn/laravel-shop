@@ -75,39 +75,6 @@
                     <slot name="customer-navigation"></slot>
 
                     <ul type="none" class="meta-wrapper">
-                        <li>
-                            <template v-if="locale">
-                                <div class="language-logo-wrapper">
-                                    <img
-                                        class="language-logo"
-                                        :src="locale.image_url"
-                                        alt=""
-                                        v-if="locale.image_url"
-                                    />
-                                </div>
-
-                                <span v-text="locale.name">{{
-                                    locale.image_url
-                                }}</span>
-                            </template>
-
-                            <i
-                                class="rango-arrow-right"
-                                @click="toggleMetaInfo('languages')"
-                            >
-                            </i>
-                        </li>
-
-                        <li>
-                            <span v-text="currency.code"></span>
-
-                            <i
-                                class="rango-arrow-right"
-                                @click="toggleMetaInfo('currencies')"
-                            >
-                            </i>
-                        </li>
-
                         <slot name="extra-navigation"></slot>
                     </ul>
                 </div>
@@ -201,78 +168,6 @@
                     </ul>
                 </div>
 
-                <div class="wrapper" v-else-if="languages">
-                    <div class="drawer-section">
-                        <i
-                            class="rango-arrow-left fs24 text-down-4"
-                            @click="toggleMetaInfo('languages')"
-                        ></i>
-
-                        <h4
-                            class="display-inbl"
-                            v-text="__('responsive.header.languages')"
-                        ></h4>
-
-                        <i
-                            class="material-icons float-right text-dark"
-                            @click="closeDrawer()"
-                            >cancel</i
-                        >
-                    </div>
-
-                    <ul type="none">
-                        <li v-for="(locale, index) in allLocales" :key="index">
-                            <a class="unset" :href="`?locale=${locale.code}`">
-                                <div class="category-logo">
-                                    <img
-                                        class="category-icon"
-                                        :src="locale.image_url"
-                                        alt=""
-                                        width="20"
-                                        height="20"
-                                        v-if="locale.image_url"
-                                    />
-                                </div>
-
-                                <span v-text="locale.name"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="wrapper" v-else-if="currencies">
-                    <div class="drawer-section">
-                        <i
-                            class="rango-arrow-left fs24 text-down-4"
-                            @click="toggleMetaInfo('currencies')"
-                        ></i>
-
-                        <h4
-                            class="display-inbl"
-                            v-text="__('shop.general.currencies')"
-                        ></h4>
-
-                        <i
-                            class="material-icons float-right text-dark"
-                            @click="closeDrawer()"
-                            >cancel</i
-                        >
-                    </div>
-
-                    <ul type="none">
-                        <li
-                            v-for="(currency, index) in allCurrencies"
-                            :key="index"
-                        >
-                            <a
-                                class="unset"
-                                :href="`?currency=${currency.code}`"
-                            >
-                                <span v-text="currency.code"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
 
             <div class="hamburger-wrapper" @click="toggleHamburger">
@@ -313,8 +208,6 @@ export default {
         'categoryCount',
         'cartItemsCount',
         'cartRoute',
-        'locale',
-        'allLocales',
         'currency',
         'allCurrencies',
     ],

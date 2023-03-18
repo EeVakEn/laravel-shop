@@ -1,24 +1,12 @@
 {!! view_render_event('bagisto.shop.layout.header.account-item.before') !!}
 
 <div id="account">
-    <div class="d-inline-block welcome-content dropdown-toggle">
-        <i class="material-icons align-vertical-top">perm_identity</i>
-
-        <span class="text-center">
-            {{ __('velocity::app.header.welcome-message', [
-                    'customer_name' => auth()->guard('customer')->user()
-                        ? auth()->guard('customer')->user()->first_name
-                        : trans('velocity::app.header.guest')
-                    ]
-                )
-            }}
-        </span>
-
-        <span class="rango-arrow-down"></span>
+    <div class="dropdown-toggle account-button">
+        <span class="material-icons-outlined">account_circle</span>
     </div>
 
     @guest('customer')
-        <div class="dropdown-list" style="width: 290px">
+        <div class="dropdown-list">
             <div class="modal-content dropdown-container">
                 <div class="modal-header no-border pb0">
                     <label class="fs18 grey">{{ __('shop::app.header.title') }}</label>

@@ -42,7 +42,7 @@
     @if (! empty($sliderData))
         <link rel="preload" as="image" href="{{ Storage::url($sliderData[0]['path']) }}">
     @else
-        <link rel="preload" as="image" href="{{ asset('/themes/velocity/assets/images/banner.webp') }}">
+        <link rel="preload" as="video" type="video/mp4" href="{{ asset('/themes/velocity/assets/images/video-back.mp4') }}">
     @endif
 
     <style type="text/css">

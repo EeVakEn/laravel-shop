@@ -24,14 +24,14 @@
                                 : 'javascript:void(0);'
                         "
                     >
-                        <img
+
+                        <img v-if="!banner.image_url"
                             class="col-12 no-padding banner-icon"
-                            :src="
-                                banner.image_url != ''
-                                    ? banner.image_url
-                                    : defaultBanner
-                            "
+                            :src="banner.image_url"
                         />
+                        <video v-else autoplay loop muted playsinline>
+                            <source class="col-12 no-padding banner-icon" :src="defaultBanner" type="video/mp4">
+                        </video>
 
                         <div
                             class="show-content"
@@ -43,12 +43,16 @@
 
             <template v-else>
                 <slide slot="slide-0">
-                    <img
-                        loading="lazy"
-                        class="col-12 no-padding banner-icon"
-                        :src="defaultBanner"
-                        alt=""
-                    />
+                    <div class="gradient-layout">
+                        <div class="content">
+                            <h1>Little bunny</h1>
+                            <h2>Магазин детской одежды с доставкой по всей России</h2>
+                            <a class="theme-btn" href="/search">Каталог</a>
+                        </div>
+                        <video autoplay loop muted playsinline ref="video" class="back-video">
+                            <source class="col-12 no-padding banner-icon" :src="defaultBanner" type="video/mp4">
+                        </video>
+                    </div>
                 </slide>
             </template>
         </carousel-component>
@@ -64,6 +68,9 @@ export default {
         banners.forEach(banner => {
             banner.style.display = 'block';
         });
+        document.querySelector('video').defaultPlaybackRate=2.0;
+        document.querySelector('video').play();
+        // this.$refs.video.playbackRate=2;
     }
 };
 </script>

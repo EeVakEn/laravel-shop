@@ -188,8 +188,8 @@ return [
         'cart'              => 'Корзина',
         'guest'             => 'Гость',
         'logout'            => 'Выйти',
-        'title'             => 'Счет',
-        'account'           => 'Счет',
+        'title'             => 'Аккаунт',
+        'account'           => 'Аккаунт',
         'profile'           => 'Профиль',
         'wishlist'          => 'список желаний',
         'all-categories'    => 'Все категории',
@@ -332,7 +332,7 @@ return [
         'header' => [
             'done'      => 'Сделанный',
             'languages' => 'Языки',
-            'greeting'  => 'Добро пожаловать, :клиент !',
+            'greeting'  => 'Добро пожаловать, :customer !',
         ]
     ],
 ];

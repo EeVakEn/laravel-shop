@@ -2,7 +2,7 @@
     <div :class="`dropdown ${cartItems.length > 0 ? '' : 'disable-active'}`">
         <div class="dropdown-toggle btn btn-link" id="mini-cart">
             <div class="mini-cart-content">
-                <i class="material-icons-outlined">shopping_cart</i>
+                <span class="material-icons-outlined ">local_mall</span>
                 <div class="badge-container">
                     <span class="badge" v-text="cartItems.length"></span>
                 </div>
@@ -68,7 +68,8 @@
                 </div>
             </div>
             <div v-else class="mini-cart-container">
-                <p style="font-size: 16px; font-weight: 400; padding: 10px;">Ваша корзина пуста, но вы всегда можете ее наполнить 😋</p>
+                <p style="font-size: 16px; font-weight: 400; padding: 10px;">Ваша корзина пуста, но вы всегда можете ее
+                    наполнить 😋</p>
             </div>
             <div v-if="cartItems.length" class="modal-footer">
                 <h5 class="col-6 text-left fw6">
@@ -85,7 +86,7 @@
             </div>
             <div class="modal-footer" :style="!cartItems.length? 'padding: 10px':''">
                 <a
-                    :class="cartItems.length ? 'col text-left fs16 link-color remove-decoration' : 'btn btn-primary text-right'"
+                    :class="cartItems.length ? 'col text-left fs16 link-color remove-decoration' : 'theme-btn text-right'"
                     :href="cartItems.length ? viewCartRoute : viewCatalog"
                 >{{ cartItems.length ? viewCartText : viewCatalogText }}</a
                 >

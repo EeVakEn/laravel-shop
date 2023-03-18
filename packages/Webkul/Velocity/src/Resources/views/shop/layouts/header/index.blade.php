@@ -1,37 +1,45 @@
 <header class="sticky-header">
-    <div class="row remove-padding-margin velocity-divide-page">
+    <div class="row justify-content-between h-100 align-items-center flex-nowrap px-3">
         <a class="left navbar-brand" href="{{ route('shop.home.index') }}" aria-label="Logo">
-            <img class="logo" src="{{ core()->getCurrentChannel()->logo_url ?? asset('themes/velocity/assets/images/logo-text.png') }}" alt="" />
+            <img class="logo"
+                 src="{{ core()->getCurrentChannel()->logo_url ?? asset('themes/velocity/assets/images/logo-text.png') }}"
+                 alt=""/>
         </a>
 
-        <div class="right searchbar">
-            <div class="row">
-                <div class="col-lg-5 col-md-12">
-                    @include('velocity::shop.layouts.particals.search-bar')
-                </div>
+        <div class="position-relative w-50">
+            @php
+                $categories = [];
 
-                <div class="col-lg-7 col-md-12 vc-full-screen">
-                    <div class="left-wrapper">
+                foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCategoryTree(core()->getCurrentChannel()->root_category_id) as $category) {
+                    if ($category->slug)
+                    array_push($categories, $category);
+                }
+            @endphp
+            <navi
+                :categories-data="{{ json_encode($categories) }}"
+                catalog-url="{{route('shop.search.index')}}"
+            >
+            </navi>
+        </div>
 
-                        {!! view_render_event('bagisto.shop.layout.header.wishlist.before') !!}
+        <div class="right mx-3">
+            <div class="left-wrapper">
 
-                            @include('velocity::shop.layouts.particals.wishlist', ['isText' => true])
+                @include('velocity::shop.layouts.particals.search-bar')
 
-                        {!! view_render_event('bagisto.shop.layout.header.wishlist.after') !!}
+                @include('velocity::layouts.top-nav.login-section')
 
-                        {!! view_render_event('bagisto.shop.layout.header.compare.before') !!}
+                {!! view_render_event('bagisto.shop.layout.header.wishlist.before') !!}
 
-                            @include('velocity::shop.layouts.particals.compare', ['isText' => true])
+                @include('velocity::shop.layouts.particals.wishlist', ['isText' => true])
 
-                        {!! view_render_event('bagisto.shop.layout.header.compare.after') !!}
+                {!! view_render_event('bagisto.shop.layout.header.wishlist.after') !!}
 
-                        {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
+                {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
 
-                            @include('shop::checkout.cart.mini-cart')
+                @include('shop::checkout.cart.mini-cart')
 
-                        {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
-                    </div>
-                </div>
+                {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
             </div>
         </div>
     </div>

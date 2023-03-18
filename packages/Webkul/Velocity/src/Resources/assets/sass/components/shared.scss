@@ -279,6 +279,7 @@
     cursor: pointer;
     font-weight: 600;
     padding: 10px 20px;
+    border-radius: 10px;
     vertical-align: top;
     border: 1px solid transparent;
     color: $white-color !important;
@@ -310,6 +311,7 @@
 
 .theme-btn:hover,
 .btn-add-to-cart:hover {
+    transition: all .3s ease;
     border-color: $theme-dark-color !important;
     background-color: $theme-dark-color !important;
     text-decoration: none;

@@ -1,16 +1,6 @@
 const path = require('path');
 const mix = require('laravel-mix');
 // const colors = require('colors');
-// Live reload
-mix.browserSync({
-    // fixes pagination urls otherwise they get re-written to use the service `container_name`...
-    host: 'localhost',
-    // service container_name...
-    proxy: 'shop_php',
-    // matches the port number exposed earlier...
-    port: 9000,
-    open: false,
-});
 
 require('laravel-mix-merge-manifest');
 require('laravel-mix-clean');

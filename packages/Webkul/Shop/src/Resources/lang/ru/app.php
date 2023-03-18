@@ -45,6 +45,7 @@ return [
 
     'minicart' => [
         'view-cart' => 'В корзину',
+        'view-catalog' => 'Каталог',
         'checkout'  => 'Проверить',
         'cart'      => 'Корзина',
         'zero'      => '0',
@@ -427,7 +428,7 @@ return [
 
     'products' => [
         'layered-nav-title'        => '«Купить по»',
-        'price-label'              => 'Так низко, как',
+        'price-label'              => 'От',
         'remove-filter-link-title' => 'Очистить все',
         'filter-to'                => 'к',
         'sort-by'                  => 'Сортировать по',
